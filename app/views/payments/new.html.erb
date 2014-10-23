@@ -1,0 +1,35 @@
+<%= form_tag payments_path, id: 'card-details' do %>
+  <div class="payment-errors"></div>
+
+  <div>
+    <label for="card-number">Card Number:</label>
+    <input id="card-number" type="text" data-stripe="number" />
+  </div>
+
+  <div>
+    <label for="card-exp-month">Card Expiry Month:</label>
+    <input id="card-exp-month" type="text" data-stripe="exp_month" />
+  </div>
+
+  <div>
+    <label for="card-exp-year">Card Expiry Year:</label>
+    <input id="card-exp-year" type="text" data-stripe="exp_year" />
+  </div>
+
+  <div>
+    <label for="card-cvc">CVC:</label>
+    <input id="card-cvc" type="text" data-stripe="cvc" />
+  </div>
+
+  <div>
+    <label for="payment-type">Payment Type:</label>
+    <select id="payment-type" name="payment_type">
+      <option value="deposit">$20 Deposit</option>
+      <option value="subscription">Monthly subscription, $9.97</option>
+    </select>
+  </div>
+
+  <div>
+    <input type="submit" value="Pay Now" />
+  </div>
+<% end %>
